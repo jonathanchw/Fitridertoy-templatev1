@@ -31,7 +31,7 @@ productsSection.innerHTML += productData
                 <span class=""> $${(product.price).toFixed(2)} </span></p>
             </span>
 
-            <a onclick="javascript:void(0);" href="product.html" class="btn_shop btn_shop7">
+            <a onclick="javascript:void(0);" href="${product.href}" class="btn_shop btn_shop7">
                 <button class="btn btn-primary btn-shop shop-btn-color">Buy It Now</button>
             </a>
 

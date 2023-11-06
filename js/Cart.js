@@ -28,7 +28,7 @@ function addToCart(id) {
   updateCartData();
 
   let product = productData.find((obj) => obj.id === id);
-    if (!product) {
+  if (!product) {
     alert("Product not found");
     return;
   }
@@ -60,48 +60,26 @@ function removeFromCart(id) {
 function handleCartItems() {
   let cartTable = document.getElementById("cart-table");
   cartTable.innerHTML += cartData
-    .map(({ id, name, imgSrc, price, quantity }) => {
+    .map(({ id, name, image, price, shipping }) => {
       return `
       <tr id="product-id-${id}" class="data_row product">
-      <td>
-        <span class="imger">
-          <img
-            src="${imgSrc}"
-            class="img-fluid"
-            alt="products"
-          />
-        </span>
-      </td>
-      <td>
-        <p><strong> ${name}</strong></p>
-      </td>
-      <td class="product-price">$${price}</td>
-      <!-- * Please Not Add $ symbol -->
-      <td class="product-quantity">
-        <input type="number" name="qty" value="${quantity}" min="1" onchange="handleQuantityInput(this, ${id})" />
-        <input
-          type="hidden"
-          name="product"
-          value="Mini Drone"
-        />
-        <!-- * Product Name -->
-
-        <input type="hidden" name="price" value="${price}" />
-        <!-- * Product Price -->
-      </td>
-      <td class="product-line-price">$${price}</td>
       <td class="product-removal">
-        <button
-          type="button"
-          class="btn btn-secondary btn-sm remove-product"
-          onclick="removeFromCart(${id})"
-        >
-          <i class="bi bi-trash3"></i>
-        </button>
+        <a onclick="removeFromCart(${id})">
+        <span class="material-icons close_button close-button" id="close-${id}">close</span>
+         </a>
       </td>
-    </tr>
-      
-
+      <td>
+       <img src="../images/products/${image}"
+            class="img-fluid cart-pdt-image" 
+            id="image${id}"
+            alt="${name}"
+          />
+      </td>
+      <td colspan="3" id="singlepdt"><p>${name}</p></td>
+      <td id="price-${id}" class="priceCol">$${price}</td>
+      <td id="shipping-${id}" class="priceCol">$${shipping}</td>
+      <td id="total-${id} class="priceCol">$${(price + shipping).toFixed(2)}</td>
+      </tr>
       `;
     })
     .join("");

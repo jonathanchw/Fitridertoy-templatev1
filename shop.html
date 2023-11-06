@@ -152,10 +152,10 @@
       </header>
     </section>
 
-    <section class="pdt-section pdt-section7" id="order">
-      <div class="container" id="products">
+    <section class="pdt-section pdt-section7">
+      <div class="container">
         <div class="product-wrapper row" id="productData">
-          <input type="hidden" name="user_ip" id="user_ip" value="" />
+          <!-- Product Cards Go Here -->
         </div>
       </div>
     </section>
@@ -245,16 +245,16 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
-    <script type="module" src="./utils/productlist.js"></script>
-    <script src="./utils/ws-data.js" defer></script>
-    <script src="js/ProductData.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/Cart.js"></script>
+    
     <script>
       // get current year
       var currentYear = new Date().getFullYear();
       // set current year in footer
       document.querySelector(".js_website-year").innerHTML = currentYear;
     </script>
+    <script src="js/ProductData.js"></script>
+    <script src="js/Cart.js"></script>
+    <script src="js/index.js"></script>
+    <script src="utils/ws-data.js" defer></script>
   </body>
 </html>
