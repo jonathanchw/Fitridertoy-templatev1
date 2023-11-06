@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Order Completed</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!--header-->
+    <section id="header" class="topnave">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <div class="col-auto hdr-logo">
+                <a href="index.html" class="logo"
+                  ><img src="images/logo/logo.png" alt="Logo"
+                /></a>
+              </div>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"
+                  ><i class="bi bi-list"></i>
+                </span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html"> Home </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="category.html"> Shop </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html"> Contact </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cart.html"> Cart </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End-header-->
+    <section id="medal_detail">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 mx-auto">
+            <img src="images/banners/thankyou.png" class="img-responsive" />
+
+            <h2>Thank you for ordering.</h2>
+            <p>Your order id is [[order_id]].</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="fotrhed">
+              <a href="index.html">Toys</a>
+              <img src="images/visa.png" class="img-fluid" alt="vasa" />
+              <p>
+                Copyright © Bright Harbor Marketing LLC. All Rights Reserved
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="fotrlink">
+              <h2>Quick Links</h2>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Products</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="fotrlink">
+              <h2>Contact us</h2>
+              <ul>
+                <li>
+                  <a href="#"
+                    >Address: Bright Harbor Marketing LLC, 1205 E Waterside Cove
+                    Apt 32 Midvale, UT 84047, USA</a
+                  >
+                </li>
+                <li><a href="#">Call us: (844) 791-3066</a></li>
+                <li><a href="#">E-mail: support@toys.com</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Effect inspired by https://codepen.io/supah/pen/RrzREx -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      /***fixednave***/
+      document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 200) {
+            document.getElementById("header").classList.add("fixed-top");
+            // add padding top to show content behind navbar
+            navbar_height = document.querySelector(".topnave").offsetHeight;
+            document.body.style.paddingTop = navbar_height + "px";
+          } else {
+            document.getElementById("header").classList.remove("fixed-top");
+            // remove padding top from body
+            document.body.style.paddingTop = "0";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

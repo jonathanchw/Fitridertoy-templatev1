@@ -1,0 +1,17 @@
+:root {
+    --nav-color:#00dffd;
+    --hero-bg:url('../images/banners/hero-bg.jpg');
+    --about-bg:url('../images/banners/about.png');
+    --primary:#ae8fc9;
+    --secondary: #45353b;
+    --header-bar:#64b473;
+    --nav-bar-text:#160335;
+    --body-bg:#e3eaa4;
+    --footer-bg:#43400e;
+    --footer-bottom-bg:#2b3319;
+    --footer-bottom-text:#1f022d;
+    --button-color-gradient: linear-gradient(180deg, #31ff87 -26.97%, #21fe0d 157.88%);
+    --background-color:#559fdf;
+    --footer-background-color:#34213c;
+    --text-color:#420e3a;
+}
