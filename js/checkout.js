@@ -23,23 +23,10 @@ function updateSubTotal() {
 }
 
 function showOrderSummary() {
-  const orderSummary_El = document.getElementById("cart-table");
+  const orderSummary_El = document.getElementById("order-table");
   const cartHtml = cartData
     .map(({ name, price, quantity, imgSrc, pageRef }) => {
-      return `
-            <tr class="prodtd">
-              <th>
-                <img
-                  src="${imgSrc}"
-                  class="img-fluid"
-                  alt="${name}"
-                />
-              </th>
-              <th class="top_heading">${price} × ${quantity}</th>
-              <td>:</td>
-              <td class="top_content">${price * quantity}</td>
-            </tr>
-      `;
+      return ;
     })
     .join("");
   orderSummary_El.innerHTML = cartHtml + orderSummary_El.innerHTML;
