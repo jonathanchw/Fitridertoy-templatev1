@@ -1,4 +1,4 @@
-const WEBSITE_NAME = 'TEMPLATE'; //Fit Rider Toy & Joy Store';
+const WEBSITE_NAME = 'Fit Rider Toy & Joy Store';
 const WEBSITE_URL = 'fitridertoyandjoystore.com';
 const WEBSITE_CORP = 'Fitness Rider Inc.';
 const WEBSITE_PHONE = '8556476310';

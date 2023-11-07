@@ -99,6 +99,7 @@ function checkFormValidity() {
       isFormValid = false;
     }
   });
+  console.log("function checkFormValidity is " + isFormValid);
   return isFormValid;
 }
 
@@ -300,12 +301,14 @@ formButton.addEventListener("click", (e) => {
     handlePaymentFormErrors();
     console.log(isTermsAgreed);
     console.log(userData);
+    console.log("not avalible to save lo localStorage yet")
   } else {
     //Save to localStorage
     localStorage.setItem("user-data", JSON.stringify(userData));
     localStorage.setItem("card-data", JSON.stringify(paymentData));
     document.getElementById("checkout_form").reset();
     window.location.href = "thankyou.html";
+    console.log("all good, Data saved in locastorage");
   }
 });
 
