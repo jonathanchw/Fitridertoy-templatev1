@@ -74,7 +74,6 @@
                         ></i>
                         <span class="cart_text nav-text-color"></span>
                         <span class="cart_amt nav-text-color">
-                          $
                           <p
                             id="cart-total"
                             class="subtotalAmount nav-text-color"
@@ -93,7 +92,7 @@
                           </div>
                           <div class="subtotal_column">
                             <p>
-                              Subtotal: $<span
+                              Subtotal: <span
                                 class="subtotalAmount"
                                 id="cart-subtotal"
                               ></span>
@@ -195,9 +194,11 @@
                 <a href="shop.html" class="btn btn-continue shop-btn-outline">
                   Continue Shopping
                 </a>
-                <button type="submit" class="btn btn-update shop-btn-color">
-                  Proceed to checkout
-                </button>
+                <a href="checkout.html">
+                  <button type="submit" class="btn btn-update shop-btn-color">
+                    Proceed to checkout
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -210,7 +211,7 @@
                 <p>
                   <span class="TextLeft"> Subtotal </span>
                   <span class="TextRight">
-                    $<span id="cart-subtotal"></span>
+                    <span id="cartDetails-subtotal">0.00</span>
                   </span>
                 </p>
                 <p>
@@ -222,7 +223,7 @@
                 <p class="total-col">
                   <span class="TextLeft"> Total </span>
                   <span class="TextRight">
-                    $<span id="cart-total">0.00</span>
+                    <span id="cartDetails-total">0.00</span>
                   </span>
                 </p>
               </div>

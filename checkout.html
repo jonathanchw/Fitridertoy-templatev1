@@ -6,34 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><span class="js_website-name"></span></title>
     <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-  />
-  <link href="css/vendor/vendor.min.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="fonts/icomoon/icons.css" rel="stylesheet" />
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open%20Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    rel="stylesheet"
-  />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css"
-  />  
-    
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link href="css/vendor/vendor.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open%20Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       type="text/css"
@@ -56,7 +51,6 @@
       href="./css/style.css?v=1662741507"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- 
   </head>
 
   <body>
@@ -106,7 +100,6 @@
                         ></i>
                         <span class="cart_text nav-text-color"></span>
                         <span class="cart_amt nav-text-color">
-                          $
                           <p
                             id="cart-total"
                             class="subtotalAmount nav-text-color"
@@ -125,7 +118,7 @@
                           </div>
                           <div class="subtotal_column">
                             <p>
-                              Subtotal: $<span
+                              Subtotal: <span
                                 class="subtotalAmount"
                                 id="cart-subtotal"
                               ></span>
@@ -335,7 +328,6 @@
                     ng-model="FullFormData.phone"
                     id="phone"
                     placeholder="Phone Number"
-                    
                   />
                 </div>
                 <div class="form-group">
@@ -375,7 +367,9 @@
                     <tr>
                       <td colspan="2">Subtotal</td>
                       <td>
-                        $<span id="cart-subtotal" value="0.00">0.00</span>
+                        <span id="cartDetails-subtotal" value="0.00"
+                          >0.00</span
+                        >
                       </td>
                     </tr>
                     <tr>
@@ -384,11 +378,13 @@
                     </tr>
                     <tr id="shipping-insurance-tr" style="display: none">
                       <td colspan="2">Shipping Insurance</td>
-                      <td>$<span value="0.00">1.00</span></td>
+                      <td><span value="0.00">1.00</span></td>
                     </tr>
                     <tr>
                       <td colspan="2">Total</td>
-                      <td>$<span id="cart-total" value="0.00">0.00</span></td>
+                      <td>
+                        <span id="cartDetails-total" value="0.00">0.00</span>
+                      </td>
                       <input type="hidden" name="order_total_value" value="" />
                     </tr>
                   </tfoot>
@@ -529,7 +525,8 @@
                     ></span>
                     ($<span class="total_price" id="cart-total"></span> + $<span
                       id="ship_price"
-                    >0</span>
+                      >0</span
+                    >
                     for shipping) for <span id="prod_name"></span>. This is a
                     one-time purchase. Shipment via USPS typically takes 3-5
                     business days. Your credit card will be billed as

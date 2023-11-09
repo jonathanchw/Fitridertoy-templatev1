@@ -18,10 +18,18 @@ function updateSubTotal() {
   });
   subTotal = Math.round(subTotal * 100) / 100;
   localStorage.setItem("cart-subtotal", subTotal);
-
   let totalLabel = document.getElementById("cart-subtotal");
   totalLabel.innerText = `$${subTotal}`;
   document.getElementById("cart-total").innerText = `$${subTotal}`;
+  let cartDetailsSubTotalLabel = document.getElementById(
+    "cartDetails-subtotal"
+  );
+  cartDetailsSubTotalLabel
+    ? (cartDetailsSubTotalLabel.innerText = `$${subTotal}`)
+    : null;
+  document.getElementById("cartDetails-total")
+    ? (document.getElementById("cartDetails-total").innerText = `$${subTotal}`)
+    : null;
 }
 
 function addToCart(id) {
@@ -78,13 +86,14 @@ function handleCartItems() {
       <td colspan="3" id="singlepdt"><p>${name}</p></td>
       <td id="price-${id}" class="priceCol">$${price}</td>
       <td id="shipping-${id}" class="priceCol">$${shipping}</td>
-      <td id="total-${id} class="priceCol">$${(price + shipping).toFixed(2)}</td>
+      <td id="total-${id} class="priceCol">$${(price + shipping).toFixed(
+        2
+      )}</td>
       </tr>
       `;
     })
     .join("");
 }
-
 
 function handleQuantityInput(e, id) {
   if (e.value === "" || e.value < 1) {
