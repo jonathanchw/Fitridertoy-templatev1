@@ -26,15 +26,43 @@ function showOrderSummary() {
   const orderSummary_El = document.getElementById("order-table");
   const cartHtml = cartData
     .map(({ name, price, quantity, imgSrc, pageRef }) => {
-      return ;
+      return;
     })
     .join("");
   orderSummary_El.innerHTML = cartHtml + orderSummary_El.innerHTML;
 }
 
+function handleCheckoutItems() {
+  let cartTable = document.getElementById("checkout-table");
+  cartTable.innerHTML += cartData
+    .map(({ id, name, image, price, shipping }) => {
+      return `
+      <tr id="product-id-${id}" class="data_row product">
+     
+      <td>
+       <img src="../images/products/${image}"
+            class="img-fluid cart-pdt-image" 
+            id="image${id}"
+            alt="${name}"
+          />
+      </td>
+      <td colspan="3" id="singlepdt"><p>${name}</p></td>
+      <td id="singlepdt"><p>One Time Sale</p></td>
+      <td id="price-${id}" class="priceCol">$${price}</td>
+      <td id="shipping-${id}" class="priceCol">$${shipping}</td>
+      <td id="total-${id} class="priceCol">$${(price + shipping).toFixed(
+        2
+      )}</td>
+      </tr>
+      `;
+    })
+    .join("");
+}
+
 updateCartData();
 updateSubTotal();
 showOrderSummary();
+handleCheckoutItems();
 /*********/
 
 /*Handle user-data form*/
@@ -301,7 +329,7 @@ formButton.addEventListener("click", (e) => {
     handlePaymentFormErrors();
     console.log(isTermsAgreed);
     console.log(userData);
-    console.log("not avalible to save lo localStorage yet")
+    console.log("not avalible to save lo localStorage yet");
   } else {
     //Save to localStorage
     localStorage.setItem("user-data", JSON.stringify(userData));
